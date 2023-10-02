@@ -3,7 +3,7 @@ import asyncio
 from os import getenv
 
 from aiogram import Bot, Dispatcher, Router
-from aiogram.filters import CommandStart
+from aiogram.filters import Command, CommandStart
 from aiogram.types import Message, FSInputFile
 from dotenv import load_dotenv
 
@@ -22,6 +22,15 @@ async def process_start_command(message: Message):
         '''Привет! Я бот-парсер товаров магазина Мегастрой.
         Просто пришлите мне ссылку с нужной тебе категорией товаров,
         а я пришлю Вам файл.'''
+    )
+
+
+@form_router.message(Command(commands=['help']))
+async def help(message: Message):
+    await message.answer(
+        'Для корректной работы бота, нужна ссылка формата:'
+        'https://<город>.megastroy.com/catalog/<категория>'
+        'Пример: https://cheboksary.megastroy.com/catalog/cement'
     )
 
 
