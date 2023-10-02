@@ -5,15 +5,23 @@
 
 ### Запуск пректа
 Создаём виртуальную среду для проекта
+```
 python -m venv venv
+```
 
 Устанавливаем необходимые компоненты из файла requirements.txt
+```
 pip install -r requirements.txt
+```
 
 Создаём файл .env c токеном телеграм-бота, формата:
+```
 BOT_TOKEN = ваш_токен
+```
 
 Запускаем бота
+```
 python3 bot.py
+```
 
 Автор: Ермеев Павел https://github.com/bytplokhim
