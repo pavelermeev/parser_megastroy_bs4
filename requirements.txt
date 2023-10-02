@@ -1,0 +1,4 @@
+requests==2.22.0
+beautifulsoup4==4.11.2
+aiogram==3.0.0b7
+dotenv
